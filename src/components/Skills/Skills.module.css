@@ -1,0 +1,158 @@
+.skills {
+  background: var(--surface-0);
+}
+
+.filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 48px;
+}
+
+.filterChip {
+  background: var(--surface-1);
+  border: 1.5px solid var(--border);
+  color: var(--text-secondary);
+  padding: 8px 20px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  letter-spacing: 0.2px;
+}
+
+.filterChip:hover {
+  border-color: var(--g-blue-600);
+  color: var(--g-blue-600);
+  background: var(--g-blue-50);
+}
+
+.filterChip.activeChip {
+  background: var(--g-blue-600);
+  border-color: var(--g-blue-600);
+  color: white;
+  box-shadow: 0 2px 8px rgba(26,115,232,0.3);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.skillCard {
+  background: var(--surface-0);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: var(--shadow-card);
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.5s cubic-bezier(0,0,0.2,1),
+    transform 0.5s cubic-bezier(0,0,0.2,1),
+    box-shadow var(--transition-standard),
+    border-color var(--transition-standard);
+}
+
+.skillCard.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.skillCard:hover {
+  box-shadow: var(--shadow-elevated);
+  border-color: var(--g-blue-200);
+  transform: translateY(-2px);
+}
+
+[data-theme="dark"] .skillCard:hover {
+  border-color: rgba(168,199,250,0.3);
+}
+
+.skillIconWrap {
+  width: 48px;
+  height: 48px;
+  background: var(--surface-1);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background var(--transition-fast);
+}
+
+.skillCard:hover .skillIconWrap {
+  background: var(--g-blue-50);
+}
+
+[data-theme="dark"] .skillCard:hover .skillIconWrap {
+  background: rgba(168,199,250,0.08);
+}
+
+.skillIcon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.skillInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.skillHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.skillName {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.skillLevel {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--g-blue-600);
+  font-family: var(--font-mono);
+}
+
+[data-theme="dark"] .skillLevel {
+  color: #7cacf8;
+}
+
+.progressTrack {
+  height: 4px;
+  background: var(--surface-3);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progressBar {
+  height: 100%;
+  background: linear-gradient(90deg, #4285f4, #1a73e8);
+  border-radius: var(--radius-full);
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 420px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
