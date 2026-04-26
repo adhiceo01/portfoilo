@@ -6,7 +6,7 @@ export const personalInfo = {
   email: 'adhicse005@gmail.com',
   phone: '+91 8220848631',
   location: 'India',
-  avatar: '/profile.jpg',
+  avatar: '/profile.jpeg',
   resumePath: '/files/ADHITHYA.pdf',
 };
 
